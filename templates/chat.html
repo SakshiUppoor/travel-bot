@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="{% static 'styles/chat.css' %}" />
+    <title>Chat</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="nav">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Travel Bot</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'conversation:user_logout' %}"
+                  >Log Out <span class="sr-only">(current)</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!--UserList and ChatWindow-->
+      <div id="content">
+        <div id="main">
+          <div id="chat">
+            <div class="chatwindow">
+              {% for chat in chats %} 
+              {% if chat.from_user == request.user%}
+
+              <div class="enclcontainer">
+                <div class="my-message">
+                  <div class="sender">
+                    You
+                    <span class="time">{{chat.timestamp|date:'H:i'}}</span>
+                  </div>
+                  <div class="my bubble">
+                    {{chat.text}}
+                  </div>
+                </div>
+              </div>
+
+              <br />
+              {% else %}
+              <div class="enclcontainer">
+                <div class="other-message">
+                  Bot
+                  <span class="time">{{chat.timestamp|date:'H:i'}}</span>
+                  {% if chat.text == "Completed!" %}
+                  <div class="bubble completed">
+                    Booking finished!
+                  </div>
+                  {% else %}
+                  <div class="other bubble">
+                    {{chat.text}}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              <br />
+              {% endif %} 
+              {% endfor %}
+            </div>
+            {{form.errors}}
+          </div>
+          <div id="control">
+            <form method="post" novalidate>
+              {% csrf_token %} 
+              {{ form.non_field_errors }} 
+              {% for hidden_field in form.hidden_fields %} 
+              {{ hidden_field.errors }}
+              {{ hidden_field}} 
+              {% endfor %} 
+              {{form.text}}
+              <button id="sendbtn"><ion-icon name="send"></ion-icon></button>
+            </form>
+          </div>
+        </div>
+        <div class="sidebar">
+          {% for booking in bookings %}
+          <div class="booking">
+            <div class="bookingid"> Booking ID:{{booking.id}}</div>
+            <div class="destination"> Destination: {{booking.destination}}</div>
+            <div class="bookroom"> No. of rooms: {{booking.noOfRooms}}</div>
+            <div class="date">from {{booking.checkInDate}} to {{booking.checkOutDate}}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    scrollingElement = document.querySelector("#main");
+    window.onload = function() {
+      scrollingElement.scrollTop = scrollingElement.scrollHeight;
+    };
+  </script>
+</html>

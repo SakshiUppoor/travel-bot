@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+#userlist {
+  background-color: #98d4f6;
+}
+
+#chat {
+  height: 80vh;
+  background-color: white;
+  z-index: 1;
+}
+
+#nav {
+  z-index: 5;
+  background-color: white;
+}
+
+#control {
+  position: fixed;
+  bottom: 0;
+  width: 84%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#sendbtn {
+  background-color: #b748faff;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 9.5fr;
+}
+
+#content {
+  display: block;
+}
+
+#main {
+  overflow: scroll;
+}
+
+#control {
+  background-color: #fff;
+  padding: 1em;
+  -webkit-box-shadow: 0px -7px 21px 1px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px -7px 21px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px -7px 21px 1px rgba(0, 0, 0, 0.13);
+  z-index: 3;
+  width: 100%;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 100fr 1fr;
+  grid-gap: 0 1em;
+}
+
+.enclcontainer {
+  max-width: 100%;
+}
+
+.bubble {
+  display: block;
+  margin: 10px 0px;
+  padding: 1em;
+  max-width: 700px;
+  align-items: right;
+  right: 5px;
+  min-width: 150px;
+}
+
+.other {
+  color: #fff;
+  background-color: #b748faff;
+  border-radius: 2em;
+}
+
+.my {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  background-color: #e7eff7ff;
+  border-radius: 2em;
+  border-top-right-radius: 0.3em;
+  display: inline-block;
+  text-align: left;
+}
+
+/*Style time*/
+.time {
+  margin-left: auto;
+  margin-right: 0;
+  color: #c4c9ca;
+}
+
+.chatwindow {
+  padding: 1em;
+  width: 100%;
+}
+
+.my-message {
+  margin-left: auto;
+  max-width: 800px;
+  right: 0;
+  text-align: right;
+  margin-right: 2em;
+}
+
+.other-message {
+  margin-left: 1.5em;
+  display: inline-block;
+}
+
+.other-message,
+.my-message {
+  font-size: 1.2em;
+}
+
+.textbox {
+  border: none;
+  background: rgb(235, 238, 240);
+  resize: none;
+  border-radius: 2em;
+  padding-left: 1.5em;
+  padding-top: 1.2em;
+  width: 100%;
+  height: 60px;
+}
+
+.textbox:focus,
+#sendbtn:focus {
+  outline: none;
+}
+
+#navbarNavDropdown {
+  position: fixed;
+  right: 1em;
+}
+
+#nav {
+  position: fixed;
+  width: 100%;
+}
+
+#content {
+  max-height: 70vh;
+  margin-top: 3.5em;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#userlist {
+  background: #f9fbfcff;
+  position: fixed;
+  width: 20%;
+  z-index: 0;
+  height: 100%;
+  padding: 0 2em;
+  overflow: scroll;
+}
+
+#userlist > h3 {
+  padding: 0.7em 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#userlist > h5 {
+  padding: 0.5em 0;
+}
+
+#you {
+  color: #b748faff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  height: 80vh;
+  background: rgba(235, 238, 240, 0.418);
+  overflow: scroll;
+  padding: 1em;
+}
+
+.booking {
+  background: #d0ecf0;
+  border: 1px solid #87b2dd;
+  margin: 0 0 1.5em 0;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+.completed {
+  background: #2ed853;
+  color: #fff;
+  border-radius: 2em;
+  padding: 1em;
+  width: 100%;
+}
+
+.bookingid {
+  font-weight: 700;
+}
+
+.booking:first-child {
+  background: #2ed853;
+  color: #fff;
+  border: 1px solid #2ed853;
+}
