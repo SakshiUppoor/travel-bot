@@ -21,7 +21,7 @@
 </p>
 
 ## About the Project
-<img style="margin:1em" src="https://s5.gifyu.com/images/output_QwJLeM.md.gif"/>
+![](https://media.giphy.com/media/SqxoiVilsELajbTGzq/giphy.gif)
 
 
 ### Pages
