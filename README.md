@@ -7,9 +7,9 @@
   <h3 align="center">Travel Chat Bot</h3>
 
   <p align="center">
-    An attendance manager that provides a smart and efficient way for students to keep track of their attendance.
+    The conversational chat bot that helps you book rooms.
     <br />
-    <a href="https://github.com/SakshiUppoor/jiffy-attendance-tracker"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/SakshiUppoor/travel-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="http://travel-chat-bot.herokuapp.com/">View Demo</a>
@@ -40,3 +40,4 @@ All the chat message and bookings are stored in the postgres db
 ### Built With
 * [Django](https://docs.djangoproject.com/en/2.2/) - The framework used
 * [Wit.ai](https://wit.ai/) - Natural Language Processing
+* [Postgres](https://www.postgresql.org/) - Database
