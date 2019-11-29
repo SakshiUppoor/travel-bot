@@ -21,9 +21,7 @@
 </p>
 
 ## About the Project
-<div style="display: inline-block; valign: top; text-align:center;">
-<img style="margin:1em" src="https://s5.gifyu.com/images/output_QwJLeM.md.gif" height="500"/>
-</div>
+<img style="margin:1em" src="https://s5.gifyu.com/images/output_QwJLeM.md.gif"/>
 
 
 ### Pages
